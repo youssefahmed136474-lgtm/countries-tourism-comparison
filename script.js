@@ -1,172 +1,314 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// بيانات الدول مع الإحداثيات
+const countriesData = {
+    "مصر": {
+        flag: "🇪🇬",
+        lat: 26.8206,
+        lng: 30.8025,
+        المساحة: "1,002,000 كم²",
+        السكان: "104 مليون نسمة",
+        العملة: "الجنيه المصري",
+        ترتيب_البنية_التحتية: "115 عالمياً",
+        سرعة_الإنترنت: "8.5 Mbps",
+        الاتصالات: "4G متاح في معظم المناطق",
+        أفضل_وقت_للسياحة: "أكتوبر - أبريل",
+        الأماكن_السياحية: [
+            { name: "أهرامات الجيزة", desc: "أحد عجائب الدنيا السبع" },
+            { name: "معابد الأقصر", desc: "آثار فرعونية عظيمة" },
+            { name: "البحر الأحمر", desc: "شواطئ جميلة للسباحة والغوص" },
+            { name: "النيل", desc: "أطول نهر في العالم" },
+            { name: "القاهرة الإسلامية", desc: "مساجد وعمارة إسلامية" }
+        ]
+    },
+    "السعودية": {
+        flag: "🇸🇦",
+        lat: 23.8859,
+        lng: 45.0792,
+        المساحة: "2,149,690 كم²",
+        السكان: "34 مليون نسمة",
+        العملة: "الريال السعودي",
+        ترتيب_البنية_التحتية: "28 عالمياً",
+        سرعة_الإنترنت: "20 Mbps",
+        الاتصالات: "5G في المدن الكبرى",
+        أفضل_وقت_للسياحة: "نوفمبر - مارس",
+        الأماكن_السياحية: [
+            { name: "م��ة المكرمة", desc: "أقدس موقع إسلامي" },
+            { name: "المدينة المنورة", desc: "ثاني أقدس موقع إسلامي" },
+            { name: "العلا", desc: "آثار ومناظر صحراوية خاصة" },
+            { name: "الرياض", desc: "عاصمة حديثة بتطور سريع" },
+            { name: "جزيرة فرسان", desc: "جزر ساحرة في البحر الأحمر" }
+        ]
+    },
+    "الإمارات": {
+        flag: "🇦🇪",
+        lat: 23.4241,
+        lng: 53.8478,
+        المساحة: "83,600 كم²",
+        السكان: "9.9 مليون نسمة",
+        العملة: "الدرهم الإماراتي",
+        ترتيب_البنية_التحتية: "2 عالمياً",
+        سرعة_الإنترنت: "45 Mbps",
+        الاتصالات: "5G متقدم",
+        أفضل_وقت_للسياحة: "نوفمبر - مارس",
+        الأماكن_السياحية: [
+            { name: "برج خليفة", desc: "أطول برج في العالم" },
+            { name: "جزيرة النخيل", desc: "مشروع عمراني فريد" },
+            { name: "دبي مول", desc: "أكبر مول في العالم" },
+            { name: "صحراء دبي", desc: "رحلات صحراوية وتجارب مثيرة" },
+            { name: "شاطئ جميرا", desc: "شاطئ جميل وحديث" }
+        ]
+    },
+    "تركيا": {
+        flag: "🇹🇷",
+        lat: 38.9637,
+        lng: 35.2433,
+        المساحة: "783,562 كم²",
+        السكان: "85 مليون نسمة",
+        العملة: "الليرة التركية",
+        ترتيب_البنية_التحتية: "49 عالمياً",
+        سرعة_الإنترنت: "18 Mbps",
+        الاتصالات: "4G/5G جيد",
+        أفضل_وقت_للسياحة: "أبريل - أكتوبر",
+        الأماكن_السياحية: [
+            { name: "اسطنبول", desc: "مدينة تاريخية بين أوروبا وآسيا" },
+            { name: "كابادوكيا", desc: "منطقة بمناظر طبيعية خيالية" },
+            { name: "بحيرة بلو", desc: "بحيرة زرقاء ساحرة" },
+            { name: "طروادة", desc: "موقع أثري عالمي" },
+            { name: "الشواطئ الفيروزية", desc: "شواطئ في البحر المتوسط" }
+        ]
+    },
+    "فرنسا": {
+        flag: "🇫🇷",
+        lat: 46.2276,
+        lng: 2.2137,
+        المساحة: "643,801 كم²",
+        السكان: "67 مليون نسمة",
+        العملة: "اليورو",
+        ترتيب_البنية_التحتية: "9 عالمياً",
+        سرعة_الإنترنت: "30 Mbps",
+        الاتصالات: "4G/5G ممتاز",
+        أفضل_وقت_للسياحة: "مايو - سبتمبر",
+        الأماكن_السياحية: [
+            { name: "برج إيفل", desc: "برج حديدي شهير في باريس" },
+            { name: "متحف اللوفر", desc: "أكبر متحف فني في العالم" },
+            { name: "قصر فرساي", desc: "قصر ملكي فخم" },
+            { name: "كاتدرائية نوتردام", desc: "معمار قوطي عظيم" },
+            { name: "منطقة الشمبانيا", desc: "منطقة العنب والنبيذ الفاخر" }
+        ]
+    },
+    "إيطاليا": {
+        flag: "🇮🇹",
+        lat: 41.8719,
+        lng: 12.5674,
+        المساحة: "301,340 كم²",
+        السكان: "59 مليون نسمة",
+        العملة: "اليورو",
+        ترتيب_البنية_التحتية: "8 عالمياً",
+        سرعة_الإنترنت: "28 Mbps",
+        الاتصالات: "4G/5G جيد",
+        أفضل_وقت_للسياحة: "أبريل - أكتوبر",
+        الأماكن_السياحية: [
+            { name: "روما", desc: "عاصمة إمبراطورية قديمة" },
+            { name: "البندقية", desc: "مدينة الجسور والقنوات" },
+            { name: "فلورنسا", desc: "مركز الفن والثقافة الإيطالية" },
+            { name: "ساحل أمالفي", desc: "شواطئ جميلة في جنوب إيطاليا" },
+            { name: "ميلان", desc: "عاصمة الموضة والتصميم" }
+        ]
+    },
+    "اليونان": {
+        flag: "🇬🇷",
+        lat: 39.0742,
+        lng: 21.8243,
+        المساحة: "131,957 كم²",
+        السكان: "10.7 مليون نسمة",
+        العملة: "اليورو",
+        ترتيب_البنية_التحتية: "33 عالمياً",
+        سرعة_الإنترنت: "22 Mbps",
+        الاتصالات: "4G جيد",
+        أفضل_وقت_للسياحة: "مايو - سبتمبر",
+        الأماكن_السياحية: [
+            { name: "أثينا", desc: "عاصمة الحضارة اليونانية" },
+            { name: "سانتوريني", desc: "جزيرة خيالية بقباب زرقاء" },
+            { name: "ميكونوس", desc: "جزيرة سياحية شهيرة" },
+            { name: "جزيرة كريت", desc: "أكبر الجزر اليونانية" },
+            { name: "الأكروبول", desc: "معبد بارثينون القديم" }
+        ]
+    },
+    "اليابان": {
+        flag: "🇯🇵",
+        lat: 36.2048,
+        lng: 138.2529,
+        المساحة: "377,975 كم²",
+        السكان: "125 مليون نسمة",
+        العملة: "الين الياباني",
+        ترتيب_البنية_التحتية: "4 عالمياً",
+        سرعة_الإنترنت: "50 Mbps",
+        الاتصالات: "5G متقدم",
+        أفضل_وقت_للسياحة: "مارس - مايو وسبتمبر - نوفمبر",
+        الأماكن_السياحية: [
+            { name: "طوكيو", desc: "عاصمة حديثة وتقليدية" },
+            { name: "معبد فوشيمي", desc: "معبد شهير بألف بوابة" },
+            { name: "جبل فوجي", desc: "أيقونة طبيعية يابانية" },
+            { name: "كيوتو", desc: "عاصمة الثقافة اليابانية التقليدية" },
+            { name: "ديزني لاند طوكيو", desc: "حديقة ترفيهية عملاقة" }
+        ]
+    },
+    "كندا": {
+        flag: "🇨🇦",
+        lat: 56.1304,
+        lng: -106.3468,
+        المساحة: "9,984,670 كم²",
+        السكان: "39 مليون نسمة",
+        العملة: "الدولار الكندي",
+        ترتيب_البنية_التحتية: "12 عالمياً",
+        سرعة_الإنترنت: "32 Mbps",
+        الاتصالات: "4G/5G جيد",
+        أفضل_وقت_للسياحة: "يونيو - سبتمبر",
+        الأماكن_السياحية: [
+            { name: "شلالات نياجارا", desc: "شلالات طبيعية ضخمة" },
+            { name: "محمية يلوستون", desc: "حديقة وطنية طبيعية" },
+            { name: "تورونتو", desc: "مدينة حديثة كندية رئيسية" },
+            { name: "تمثال المسيح", desc: "منحوتة حجرية شهيرة" },
+            { name: "جبال روكي", desc: "سلسلة جبال خضراء جميلة" }
+        ]
+    },
+    "إسبانيا": {
+        flag: "🇪🇸",
+        lat: 40.4637,
+        lng: -3.7492,
+        المساحة: "505,990 كم²",
+        السكان: "47 مليون نسمة",
+        العملة: "اليورو",
+        ترتيب_البنية_التحتية: "15 عالمياً",
+        سرعة_الإنترنت: "25 Mbps",
+        الاتصالات: "4G/5G جيد",
+        أفضل_وقت_للسياحة: "مايو - سبتمبر",
+        الأماكن_السياحية: [
+            { name: "برشلونة", desc: "مدينة ساحلية بعمارة حديثة" },
+            { name: "مدريد", desc: "عاصمة إسبانيا الثقافية" },
+            { name: "الحمراء", desc: "قصر إسلامي قديم في غرناطة" },
+            { name: "ساحل كوستا ديل سول", desc: "شواطئ البحر المتوسط" },
+            { name: "ساغرادا فاميليا", desc: "كنيسة معمارية فريدة" }
+        ]
+    }
+};
 
-body {
-    font-family: 'Arial', sans-serif;
-    direction: rtl;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 20px;
-}
+let map = null;
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
+// ملء القائمة المنسدلة
+window.addEventListener('DOMContentLoaded', function() {
+    const country1Select = document.getElementById('country1');
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #2c3e50;
-}
+    Object.keys(countriesData).forEach(country => {
+        const option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        country1Select.appendChild(option);
+    });
+});
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #667eea;
-}
+// دالة المقارنة
+function compareCountries() {
+    const country = document.getElementById('country1').value;
+    const comparisonDiv = document.getElementById('comparison');
 
-header p {
-    font-size: 1.2em;
-    color: #7f8c8d;
-}
-
-.selector-section {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.country-selector {
-    display: flex;
-    flex-direction: column;
-}
-
-.country-selector label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.country-selector select,
-button {
-    padding: 12px 20px;
-    border: 2px solid #667eea;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-    background: white;
-    color: #2c3e50;
-    transition: all 0.3s ease;
-}
-
-.country-selector select {
-    min-width: 250px;
-}
-
-.country-selector select:hover,
-.country-selector select:focus {
-    border-color: #764ba2;
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
-}
-
-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    font-weight: bold;
-    min-width: 150px;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-}
-
-.comparison-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.country-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.country-card:hover {
-    transform: translateY(-5px);
-}
-
-.country-card h2 {
-    color: #667eea;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    text-align: center;
-}
-
-.info-item {
-    background: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-right: 4px solid #667eea;
-    border-radius: 8px;
-}
-
-.info-item strong {
-    color: #764ba2;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.info-item p {
-    color: #555;
-    line-height: 1.6;
-}
-
-.comparison-title {
-    grid-column: 1 / -1;
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-.comparison-title h2 {
-    font-size: 1.5em;
-}
-
-@media (max-width: 768px) {
-    .comparison-section {
-        grid-template-columns: 1fr;
+    if (!country) {
+        comparisonDiv.innerHTML = '<p style="text-align: center; color: red;">⚠️ يرجى اختيار دولة</p>';
+        return;
     }
 
-    .selector-section {
-        flex-direction: column;
+    const data = countriesData[country];
+
+    let html = `
+        <div class="country-card">
+            <h2>${data.flag} ${country}</h2>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>📍 المساحة:</strong>
+                    <p>${data.المساحة}</p>
+                </div>
+                <div class="info-item">
+                    <strong>👥 السكان:</strong>
+                    <p>${data.السكان}</p>
+                </div>
+                <div class="info-item">
+                    <strong>💱 العملة:</strong>
+                    <p>${data.العملة}</p>
+                </div>
+                <div class="info-item">
+                    <strong>🏗️ ترتيب البنية التحتية:</strong>
+                    <p>${data.ترتيب_البنية_التحتية}</p>
+                </div>
+                <div class="info-item">
+                    <strong>🌐 سرعة الإنترنت:</strong>
+                    <p>${data.سرعة_الإنترنت}</p>
+                </div>
+                <div class="info-item">
+                    <strong>📱 الاتصالات:</strong>
+                    <p>${data.الاتصالات}</p>
+                </div>
+                <div class="info-item">
+                    <strong>🗓️ أفضل وقت للسياحة:</strong>
+                    <p>${data.أفضل_وقت_للسياحة}</p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+
+            <div class="attractions-section">
+                <h3>🎭 أبرز الأماكن السياحية</h3>
+                <div class="attractions-list">
+                    ${data.الأماكن_السياحية.map(attr => `
+                        <div class="attraction-item">
+                            <h4>${attr.name}</h4>
+                            <p>${attr.desc}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <div class="booking-section">
+                <h3>🏨 ابدأ رحلتك الآن</h3>
+                <div class="booking-buttons">
+                    <a href="https://www.booking.com/searchresults.html?ss=${country}" target="_blank" class="booking-btn">
+                        🏨 احجز فندق على Booking
+                    </a>
+                    <a href="https://www.airbnb.com/s/${country}/homes" target="_blank" class="booking-btn airbnb">
+                        🏠 ابحث عن شقة على Airbnb
+                    </a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    comparisonDiv.innerHTML = html;
+
+    // تحميل الخريطة بعد قليل
+    setTimeout(() => {
+        loadMap(data);
+    }, 100);
+}
+
+// دالة تحميل الخريطة
+function loadMap(data) {
+    // إزالة الخريطة القديمة إن وجدت
+    if (map) {
+        map.remove();
     }
 
-    .country-selector select {
-        min-width: 100%;
-    }
+    // إنشاء خريطة جديدة
+    map = L.map('map').setView([data.lat, data.lng], 5);
 
-    button {
-        min-width: 100%;
-    }
+    // إضافة طبقة الخريطة
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19
+    }).addTo(map);
 
-    header h1 {
-        font-size: 1.8em;
-    }
+    // إضافة علامة على الخريطة
+    L.marker([data.lat, data.lng], {
+        title: 'موقع الدولة'
+    }).addTo(map).bindPopup(`<b>${data.flag}</b>`);
 }
