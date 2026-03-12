@@ -1,216 +1,31 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-
-<meta charset="UTF-8">
-<title>مقارنة بين الدول</title>
-
-<style>
-
 body{
-font-family: Arial;
-margin:0;
+font-family:Arial;
 background:linear-gradient(120deg,#4facfe,#00f2fe);
-}
-
-header{
-text-align:center;
-color:white;
-padding:40px;
-font-size:28px;
-font-weight:bold;
-}
-
-.container{
-display:flex;
-justify-content:center;
-gap:40px;
-padding:20px;
-flex-wrap:wrap;
-}
-
-.country-card{
-background:white;
-width:300px;
-border-radius:15px;
-padding:20px;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
-transition:0.3s;
-}
-
-.country-card:hover{
-transform:scale(1.05);
-}
-
-.flag{
-font-size:60px;
 text-align:center;
 }
 
-.country-name{
-text-align:center;
-font-size:24px;
-color:#0077cc;
-margin:10px 0;
-}
-
-.info{
-margin-top:15px;
-}
-
-.info p{
+select{
+padding:10px;
 font-size:16px;
-margin:8px 0;
+margin:10px;
 }
 
-.compare-title{
-text-align:center;
-font-size:26px;
-margin-top:30px;
-color:white;
-}
-
-.table-container{
-display:flex;
-justify-content:center;
-margin-top:20px;
-padding-bottom:40px;
-}
-
-table{
-border-collapse:collapse;
-width:70%;
-background:white;
-border-radius:10px;
-overflow:hidden;
-}
-
-th{
+button{
+padding:10px 20px;
+font-size:16px;
 background:#0077cc;
 color:white;
-padding:15px;
-font-size:18px;
+border:none;
+border-radius:5px;
+cursor:pointer;
 }
 
-td{
-padding:12px;
-text-align:center;
-border-bottom:1px solid #ddd;
+button:hover{
+background:#005fa3;
 }
 
-tr:hover{
-background:#f5f5f5;
-}
-
-footer{
-text-align:center;
+#result{
+margin-top:20px;
+font-size:20px;
 color:white;
-padding:20px;
-font-size:14px;
 }
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-موقع مقارنة بين الدول
-</header>
-
-<div class="container">
-
-<div class="country-card">
-
-<div class="flag">🇪🇬</div>
-
-<div class="country-name">
-مصر
-</div>
-
-<div class="info">
-<p>العاصمة: القاهرة</p>
-<p>عدد السكان: 110 مليون</p>
-<p>المساحة: 1 مليون كم²</p>
-<p>العملة: الجنيه المصري</p>
-<p>القارة: أفريقيا</p>
-</div>
-
-</div>
-
-
-<div class="country-card">
-
-<div class="flag">🇸🇦</div>
-
-<div class="country-name">
-السعودية
-</div>
-
-<div class="info">
-<p>العاصمة: الرياض</p>
-<p>عدد السكان: 36 مليون</p>
-<p>المساحة: 2.1 مليون كم²</p>
-<p>العملة: الريال السعودي</p>
-<p>القارة: آسيا</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="compare-title">
-جدول المقارنة
-</div>
-
-<div class="table-container">
-
-<table>
-
-<tr>
-<th>المعلومة</th>
-<th>مصر</th>
-<th>السعودية</th>
-</tr>
-
-<tr>
-<td>العاصمة</td>
-<td>القاهرة</td>
-<td>الرياض</td>
-</tr>
-
-<tr>
-<td>عدد السكان</td>
-<td>110 مليون</td>
-<td>36 مليون</td>
-</tr>
-
-<tr>
-<td>المساحة</td>
-<td>1 مليون كم²</td>
-<td>2.1 مليون كم²</td>
-</tr>
-
-<tr>
-<td>العملة</td>
-<td>الجنيه المصري</td>
-<td>الريال السعودي</td>
-</tr>
-
-<tr>
-<td>القارة</td>
-<td>أفريقيا</td>
-<td>آسيا</td>
-</tr>
-
-</table>
-
-</div>
-
-<footer>
-موقع تعليمي بسيط للمقارنة بين الدول
-</footer>
-
-</body>
-</html>
