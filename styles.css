@@ -15,9 +15,16 @@ h1{
 .selectors{
   display:flex;
   justify-content:center;
-  gap:50px;
+  align-items:center; /* يخلي القوائم في المنتصف عموديًا */
+  gap:30px;
   margin-bottom:20px;
   flex-wrap:wrap;
+}
+
+.select-box{
+  display:flex;
+  flex-direction: column;
+  align-items: center; /* يوسّط القوائم داخل كل select-box */
 }
 
 .select-box label{
@@ -45,6 +52,9 @@ button{
   cursor:pointer;
   margin-top:15px;
   transition:0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* يجعل الزرار في المنتصف */
 }
 
 button:hover{
