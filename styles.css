@@ -1,83 +1,88 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<title>مقارنة بين دولتين</title>
-<style>
-  body{
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(to right,#4facfe,#00f2fe);
-    margin:0;
-    padding:50px 20px;
-  }
+body{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(to right,#4facfe,#00f2fe);
+  margin:0;
+  padding:50px 20px;
+}
 
-  h1{
-    color:white;
-    font-size:36px;
-    margin-bottom:40px;
-  }
+h1{
+  color:white;
+  font-size:36px;
+  margin-bottom:40px;
+}
 
-  label{
-    display:block;
-    color:white;
-    font-size:18px;
-    margin-bottom:8px;
-  }
+label{
+  display:block;
+  color:white;
+  font-size:18px;
+  margin-bottom:8px;
+}
 
-  select{
-    padding:10px;
-    font-size:16px;
-    border-radius:8px;
-    border:none;
-    min-width:180px;
-    margin-bottom:20px;
-  }
+select{
+  padding:10px;
+  font-size:16px;
+  border-radius:8px;
+  border:none;
+  min-width:180px;
+  margin-bottom:20px;
+}
 
-  button{
-    padding:12px 25px;
-    font-size:18px;
-    background:#ff6b6b;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    transition:0.3s;
-  }
+button{
+  padding:12px 25px;
+  font-size:18px;
+  background:#ff6b6b;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
 
-  button:hover{
-    background:#ff3b3b;
-  }
+button:hover{
+  background:#ff3b3b;
+}
 
-  #result{
-    margin-top:40px;
-  }
-</style>
-</head>
-<body>
+/* حاوية النتائج */
+#result{
+  margin-top:40px;
+  display:flex;
+  justify-content:center; /* يوسّط الكروت أفقياً */
+  align-items:center;     /* يوسّط الكروت رأسياً */
+  gap:30px;
+  flex-wrap:wrap;
+}
 
-<h1>مقارنة بين دولتين</h1>
+/* تصميم كارت الدولة */
+.country-card{
+  background:white;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  padding:20px;
+  min-width:280px;
+  transition:0.3s;
+}
 
-<!-- الدولة الأولى -->
-<label>الدولة الأولى:</label>
-<select id="country1">
-  <option value="">-- اختر دولة --</option>
-</select>
+.country-card:hover{
+  transform: scale(1.05);
+}
 
-<!-- الدولة الثانية -->
-<label>الدولة الثانية:</label>
-<select id="country2">
-  <option value="">-- اختر دولة --</option>
-</select>
+.country-card .flag{
+  font-size:60px;
+  text-align:center;
+  margin-bottom:15px;
+}
 
-<br>
+.country-card h2{
+  color:#0077cc;
+  font-size:26px;
+  margin:10px 0;
+}
 
-<!-- زرار القارن -->
-<button>قارن</button>
-
-<div id="result">
-  <!-- هنا ستظهر نتائج المقارنة لاحقًا -->
-</div>
-
-</body>
-</html>
+.country-card p{
+  font-size:16px;
+  margin:6px 0;
+}
