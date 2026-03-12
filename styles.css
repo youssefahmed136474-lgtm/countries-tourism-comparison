@@ -1,100 +1,83 @@
-body{
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: linear-gradient(to right,#4facfe,#00f2fe);
-  margin:0;
-  padding:50px 20px;
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>مقارنة بين دولتين</title>
+<style>
+  body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right,#4facfe,#00f2fe);
+    margin:0;
+    padding:50px 20px;
+  }
 
-h1{
-  color:white;
-  font-size:36px;
-  margin-bottom:40px;
-}
+  h1{
+    color:white;
+    font-size:36px;
+    margin-bottom:40px;
+  }
 
-.selectors{
-  display:flex;
-  justify-content:center;
-  align-items:center; /* يخلي القوائم في المنتصف عموديًا */
-  gap:30px;
-  margin-bottom:20px;
-  flex-wrap:wrap;
-}
+  label{
+    display:block;
+    color:white;
+    font-size:18px;
+    margin-bottom:8px;
+  }
 
-.select-box{
-  display:flex;
-  flex-direction: column;
-  align-items: center; /* يوسّط القوائم داخل كل select-box */
-}
+  select{
+    padding:10px;
+    font-size:16px;
+    border-radius:8px;
+    border:none;
+    min-width:180px;
+    margin-bottom:20px;
+  }
 
-.select-box label{
-  display:block;
-  color:white;
-  margin-bottom:5px;
-  font-size:16px;
-}
+  button{
+    padding:12px 25px;
+    font-size:18px;
+    background:#ff6b6b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+  }
 
-select{
-  padding:10px;
-  font-size:16px;
-  border-radius:8px;
-  border:none;
-  min-width:150px;
-}
+  button:hover{
+    background:#ff3b3b;
+  }
 
-button{
-  padding:12px 25px;
-  font-size:18px;
-  background:#ff6b6b;
-  color:white;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  margin-top:15px;
-  transition:0.3s;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; /* يجعل الزرار في المنتصف */
-}
+  #result{
+    margin-top:40px;
+  }
+</style>
+</head>
+<body>
 
-button:hover{
-  background:#ff3b3b;
-}
+<h1>مقارنة بين دولتين</h1>
 
-#result{
-  margin-top:40px;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
+<!-- الدولة الأولى -->
+<label>الدولة الأولى:</label>
+<select id="country1">
+  <option value="">-- اختر دولة --</option>
+</select>
 
-.country-card{
-  background:white;
-  border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  padding:20px;
-  min-width:280px;
-  transition:0.3s;
-}
+<!-- الدولة الثانية -->
+<label>الدولة الثانية:</label>
+<select id="country2">
+  <option value="">-- اختر دولة --</option>
+</select>
 
-.country-card:hover{
-  transform: scale(1.05);
-}
+<br>
 
-.country-card .flag{
-  font-size:60px;
-  text-align:center;
-  margin-bottom:15px;
-}
+<!-- زرار القارن -->
+<button>قارن</button>
 
-.country-card h2{
-  color:#0077cc;
-  font-size:26px;
-  margin:10px 0;
-}
+<div id="result">
+  <!-- هنا ستظهر نتائج المقارنة لاحقًا -->
+</div>
 
-.country-card p{
-  font-size:16px;
-  margin:6px 0;
-}
+</body>
+</html>
