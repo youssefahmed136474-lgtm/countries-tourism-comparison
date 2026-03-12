@@ -1,415 +1,216 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+
+<meta charset="UTF-8">
+<title>مقارنة بين الدول</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:linear-gradient(120deg,#4facfe,#00f2fe);
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    direction: rtl;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 20px;
+header{
+text-align:center;
+color:white;
+padding:40px;
+font-size:28px;
+font-weight:bold;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+.container{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+flex-wrap:wrap;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #2c3e50;
+.country-card{
+background:white;
+width:300px;
+border-radius:15px;
+padding:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+transition:0.3s;
 }
 
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #667eea;
+.country-card:hover{
+transform:scale(1.05);
 }
 
-header p {
-    font-size: 1.2em;
-    color: #7f8c8d;
+.flag{
+font-size:60px;
+text-align:center;
 }
 
-.selector-section {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+.country-name{
+text-align:center;
+font-size:24px;
+color:#0077cc;
+margin:10px 0;
 }
 
-.country-selector {
-    display: flex;
-    flex-direction: column;
+.info{
+margin-top:15px;
 }
 
-.country-selector label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #2c3e50;
+.info p{
+font-size:16px;
+margin:8px 0;
 }
 
-.country-selector select,
-button {
-    padding: 12px 20px;
-    border: 2px solid #667eea;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-    background: white;
-    color: #2c3e50;
-    transition: all 0.3s ease;
+.compare-title{
+text-align:center;
+font-size:26px;
+margin-top:30px;
+color:white;
 }
 
-.country-selector select {
-    min-width: 300px;
+.table-container{
+display:flex;
+justify-content:center;
+margin-top:20px;
+padding-bottom:40px;
 }
 
-.country-selector select:hover,
-.country-selector select:focus {
-    border-color: #764ba2;
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+table{
+border-collapse:collapse;
+width:70%;
+background:white;
+border-radius:10px;
+overflow:hidden;
 }
 
-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    font-weight: bold;
-    min-width: 150px;
+th{
+background:#0077cc;
+color:white;
+padding:15px;
+font-size:18px;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+td{
+padding:12px;
+text-align:center;
+border-bottom:1px solid #ddd;
 }
 
-.comparison-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-top: 30px;
+tr:hover{
+background:#f5f5f5;
 }
 
-.country-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-.animated-img {
-  width: 300px;
-  border-radius: 10px;
-  transition: transform 0.5s ease-in-out;
+footer{
+text-align:center;
+color:white;
+padding:20px;
+font-size:14px;
 }
 
-.animated-img:hover {
-  transform: scale(1.1) rotate(2deg);
-}
-.country-card h2 {
-    color: #667eea;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    text-align: center;
-}
+</style>
 
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
-}
+</head>
 
-.info-item {
-    background: white;
-    padding: 15px;
-    border-right: 4px solid #667eea;
-    border-radius: 8px;
-}
+<body>
 
-.info-item strong {
-    color: #764ba2;
-    display: block;
-    margin-bottom: 5px;
-}
+<header>
+موقع مقارنة بين الدول
+</header>
 
-.info-item p {
-    color: #555;
-    line-height: 1.6;
-    font-size: 0.95em;
-}
+<div class="container">
 
-.map-container {
-    margin: 20px 0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
+<div class="country-card">
 
-#map {
-    height: 400px;
-    width: 100%;
-}
+<div class="flag">🇪🇬</div>
 
-.attractions-section {
-    margin-top: 20px;
-}
+<div class="country-name">
+مصر
+</div>
 
-.attractions-section h3 {
-    color: #667eea;
-    margin-bottom: 15px;
-}
+<div class="info">
+<p>العاصمة: القاهرة</p>
+<p>عدد السكان: 110 مليون</p>
+<p>المساحة: 1 مليون كم²</p>
+<p>العملة: الجنيه المصري</p>
+<p>القارة: أفريقيا</p>
+</div>
 
-.attractions-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.attraction-item {
-    background: white;
-    padding: 15px;
-    border-left: 4px solid #667eea;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.attraction-item h4 {
-    color: #764ba2;
-    margin-bottom: 8px;
-}
-
-.attraction-item p {
-    color: #666;
-    font-size: 0.9em;
-}
-
-.booking-section {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.booking-section h3 {
-    color: #c0392b;
-    margin-bottom: 15px;
-}
-
-.booking-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.booking-btn {
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.booking-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-}
-
-.booking-btn.airbnb {
-    background: linear-gradient(135deg, #ff5a5f 0%, #c1272d 100%);
-}
+</div>
 
 
+<div class="country-card">
 
+<div class="flag">🇸🇦</div>
 
+<div class="country-name">
+السعودية
+</div>
 
-/*تجربة استجابة التصميم*/
-.gallery-img {
-  width: 250px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+<div class="info">
+<p>العاصمة: الرياض</p>
+<p>عدد السكان: 36 مليون</p>
+<p>المساحة: 2.1 مليون كم²</p>
+<p>العملة: الريال السعودي</p>
+<p>القارة: آسيا</p>
+</div>
 
-.gallery-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
+</div>
 
+</div>
 
+<div class="compare-title">
+جدول المقارنة
+</div>
 
-body {
-  font-family: 'Cairo', sans-serif;
-  direction: rtl;
-  background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5ed, #2193b0);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
-  min-height: 100vh;
-  padding: 20px;
-}
+<div class="table-container">
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+<table>
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 15px;
-  padding: 40px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
+<tr>
+<th>المعلومة</th>
+<th>مصر</th>
+<th>السعودية</th>
+</tr>
 
-.country-card {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.8s ease;
-}
+<tr>
+<td>العاصمة</td>
+<td>القاهرة</td>
+<td>الرياض</td>
+</tr>
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+<tr>
+<td>عدد السكان</td>
+<td>110 مليون</td>
+<td>36 مليون</td>
+</tr>
 
-.gallery-img {
-  width: 250px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+<tr>
+<td>المساحة</td>
+<td>1 مليون كم²</td>
+<td>2.1 مليون كم²</td>
+</tr>
 
-.gallery-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-.attraction-item {
-  background: #fff;
-  padding: 15px;
-  border: 2px solid #667eea;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
+<tr>
+<td>العملة</td>
+<td>الجنيه المصري</td>
+<td>الريال السعودي</td>
+</tr>
 
-.attraction-item:hover {
-  transform: translateY(-5px);
-}
+<tr>
+<td>القارة</td>
+<td>أفريقيا</td>
+<td>آسيا</td>
+</tr>
 
-.attraction-item h4 {
-  color: #764ba2;
-  margin-bottom: 8px;
-}
+</table>
 
-.attraction-item p {
-  color: #555;
-  margin-bottom: 10px;
-}
+</div>
 
-.attraction-img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  margin-top: 10px;
-  transition: transform 0.4s ease;
-}
+<footer>
+موقع تعليمي بسيط للمقارنة بين الدول
+</footer>
 
-.attraction-img:hover {
-  transform: scale(1.05);
-}
-.attraction-item {
-  background: #fff;
-  padding: 15px;
-  border: 2px solid #667eea;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
-
-.attraction-img {
-  width: 100%;       /* تاخد عرض الكارد بالكامل */
-  height: auto;      /* تحافظ على النسبة */
-  border-radius: 8px;
-  margin-top: 10px;
-  display: block;
-}
-.attraction-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 10px;
-  transition: transform 0.4s ease;
-  cursor: zoom-in;
-}
-
-.attraction-img:hover {
-  transform: scale(1.2);   /* تكبير الصورة */
-}
-
-.info-item {
-  background: white;
-  padding: 15px;
-  border-right: 4px solid #667eea;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: zoom-in;
-  overflow: hidden;       /* يمنع النص أو المحتوى يطلع برا */
-}
-
-.info-item:hover {
-  transform: scale(1.05);   /* تكبير العنصر */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-@media (max-width: 768px) {
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .selector-section {
-        flex-direction: column;
-    }
-
-    .country-selector select {
-        min-width: 100%;
-    }
-
-    button {
-        min-width: 100%;
-    }
-
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    #map {
-        height: 300px;
-    }
-
-    .attractions-list {
-        grid-template-columns: 1fr;
-    }
-}
+</body>
+</html>
