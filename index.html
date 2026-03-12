@@ -2,20 +2,25 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>معلومات الدولة</title>
+<title>مقارنة الدول</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>اختر دولة لمعرفة معلوماتها</h1>
+<h1>اختر دولتين للمقارنة</h1>
 
-<div class="selector">
-  <select id="countrySelect">
-    <option value="">-- اختر دولة --</option>
-  </select>
-  <br>
-  <button onclick="showCountryInfo()">اظهر معلومات الدولة</button>
+<div class="selectors">
+  <div>
+    <label>الدولة الأولى:</label>
+    <select id="country1"></select>
+  </div>
+  <div>
+    <label>الدولة الثانية:</label>
+    <select id="country2"></select>
+  </div>
 </div>
+
+<button onclick="compareCountries()">قارن</button>
 
 <div id="result"></div>
 
