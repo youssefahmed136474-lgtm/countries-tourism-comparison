@@ -2,32 +2,30 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>مقارنة الدول</title>
-<link rel="stylesheet" href="style.css">
+<title>مقارنة بين دولتين</title>
 </head>
 <body>
 
-<h1>اختر دولتين للمقارنة</h1>
+<h1>مقارنة بين دولتين</h1>
 
-<div class="selectors">
-  <div class="select-box">
-    <label>الدولة الأولى:</label>
-    <select id="country1">
-      <option value="">-- اختر دولة --</option>
-    </select>
-  </div>
-  <div class="select-box">
-    <label>الدولة الثانية:</label>
-    <select id="country2">
-      <option value="">-- اختر دولة --</option>
-    </select>
-  </div>
-</div>
+<!-- الدولة الأولى -->
+<label>الدولة الأولى:</label>
+<select id="country1">
+  <option value="">-- اختر دولة --</option>
+</select>
 
-<button onclick="compareCountries()">قارن</button>
+<br><br>
 
-<div id="result"></div>
+<!-- الدولة الثانية -->
+<label>الدولة الثانية:</label>
+<select id="country2">
+  <option value="">-- اختر دولة --</option>
+</select>
 
-<script src="script.js"></script>
+<br><br>
+
+<!-- زرار القارن -->
+<button>قارن</button>
+
 </body>
 </html>
