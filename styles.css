@@ -106,7 +106,15 @@ button:hover {
     padding: 25px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
+.animated-img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
 
+.animated-img:hover {
+  transform: scale(1.1) rotate(2deg);
+}
 .country-card h2 {
     color: #667eea;
     margin-bottom: 20px;
@@ -225,6 +233,155 @@ button:hover {
 
 .booking-btn.airbnb {
     background: linear-gradient(135deg, #ff5a5f 0%, #c1272d 100%);
+}
+
+
+
+
+
+/*تجربة استجابة التصميم*/
+.gallery-img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5ed, #2193b0);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.country-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.attraction-item {
+  background: #fff;
+  padding: 15px;
+  border: 2px solid #667eea;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.attraction-item:hover {
+  transform: translateY(-5px);
+}
+
+.attraction-item h4 {
+  color: #764ba2;
+  margin-bottom: 8px;
+}
+
+.attraction-item p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.attraction-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: transform 0.4s ease;
+}
+
+.attraction-img:hover {
+  transform: scale(1.05);
+}
+.attraction-item {
+  background: #fff;
+  padding: 15px;
+  border: 2px solid #667eea;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.attraction-img {
+  width: 100%;       /* تاخد عرض الكارد بالكامل */
+  height: auto;      /* تحافظ على النسبة */
+  border-radius: 8px;
+  margin-top: 10px;
+  display: block;
+}
+.attraction-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: transform 0.4s ease;
+  cursor: zoom-in;
+}
+
+.attraction-img:hover {
+  transform: scale(1.2);   /* تكبير الصورة */
+}
+
+.info-item {
+  background: white;
+  padding: 15px;
+  border-right: 4px solid #667eea;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: zoom-in;
+  overflow: hidden;       /* يمنع النص أو المحتوى يطلع برا */
+}
+
+.info-item:hover {
+  transform: scale(1.05);   /* تكبير العنصر */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 768px) {
