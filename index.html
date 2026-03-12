@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مقارنة السياحة بين الدول</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Leaflet CSS للخريطة -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<meta charset="UTF-8">
+<title>معلومات الدولة</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌍 مقارنة السياحة بين الدول</h1>
-            <p>اكتشف الفروقات والفنادق والأماكن السياحية</p>
-        </header>
 
-        <div class="selector-section">
-            <div class="country-selector">
-                <label for="country1">اختر الدولة:</label>
-                <select id="country1">
-                    <option value="">-- اختر دولة --</option>
-                </select>
-            </div>
-            <button onclick="compareCountries()">عرض التفاصيل</button>
-        </div>
-        
+<h1>اختر دولة لمعرفة معلوماتها</h1>
 
-        <div id="comparison" class="comparison-section"></div>
-        
-    </div>
+<div class="selector">
+  <select id="countrySelect">
+    <option value="">-- اختر دولة --</option>
+  </select>
+  <br>
+  <button onclick="showCountryInfo()">اظهر معلومات الدولة</button>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <script src="script.js"></script>
+<div id="result"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
