@@ -1,29 +1,90 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<title>مقارنة الدول</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+body{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(to right,#4facfe,#00f2fe);
+  margin:0;
+  padding:50px 20px;
+}
 
-<h1>اختر دولتين للمقارنة</h1>
+h1{
+  color:white;
+  font-size:36px;
+  margin-bottom:40px;
+}
 
-<div class="selectors">
-  <div>
-    <label>الدولة الأولى:</label>
-    <select id="country1"></select>
-  </div>
-  <div>
-    <label>الدولة الثانية:</label>
-    <select id="country2"></select>
-  </div>
-</div>
+.selectors{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
 
-<button onclick="compareCountries()">قارن</button>
+.select-box label{
+  display:block;
+  color:white;
+  margin-bottom:5px;
+  font-size:16px;
+}
 
-<div id="result"></div>
+select{
+  padding:10px;
+  font-size:16px;
+  border-radius:8px;
+  border:none;
+  min-width:150px;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+button{
+  padding:12px 25px;
+  font-size:18px;
+  background:#ff6b6b;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:15px;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ff3b3b;
+}
+
+#result{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.country-card{
+  background:white;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  padding:20px;
+  min-width:280px;
+  transition:0.3s;
+}
+
+.country-card:hover{
+  transform: scale(1.05);
+}
+
+.country-card .flag{
+  font-size:60px;
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.country-card h2{
+  color:#0077cc;
+  font-size:26px;
+  margin:10px 0;
+}
+
+.country-card p{
+  font-size:16px;
+  margin:6px 0;
+}
