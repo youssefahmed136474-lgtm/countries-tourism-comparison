@@ -58,3 +58,5 @@ function compareCountries(){
     </div>
   `;
 }
+
+document.getElementById("compareBtn").addEventListener("click", compareCountries);
