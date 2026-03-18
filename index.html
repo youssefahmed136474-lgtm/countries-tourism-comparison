@@ -1,85 +1,44 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مقارنة السياحة بين الدول</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Leaflet CSS للخريطة -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<meta charset="UTF-8">
+<title>مقارنة بين دولتين</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌍 مقارنة السياحة بين الدول</h1>
-            <p>اكتشف الفروقات والفنادق والأماكن السياحية</p>
-        </header>
 
-        <div class="selector-section">
-            <div class="country-selector">
-                <label for="passport">🛂 اختر جواز سفرك:</label>
-                <select id="passport" aria-label="اختر جنسيتك" onchange="onPassportChange()">
-                    <option value="">-- اختر جواز السفر --</option>
-                </select>
-            </div>
+<div class="container">
+  <!-- الهيدر -->
+  <header class="header">
+    <h1>🌎 مقارنة بين دولتين</h1>
+    <p>اكتشف أهم المعلومات بسرعة وبشكل جذاب</p>
+  </header>
 
-            <div id="visa-filter-buttons" class="visa-filter-buttons" style="display:none;">
-                <p>اختر طريقة البحث:</p>
-                <button onclick="filterByVisa('allowed')" class="filter-btn">✅ الدول المسموح بدخولك فيها</button>
-                <button onclick="filterByVisa('all-countries')" class="filter-btn">🌍 جميع الدول</button>
-            </div>
-
-            <div class="country-selector">
-                <label for="search1">🔍 ابحث عن الدولة الأولى:</label>
-                <input 
-                    type="text" 
-                    id="search1" 
-                    class="country-search" 
-                    placeholder="اكتب اسم الدولة..." 
-                    aria-label="البحث عن الدولة الأولى">
-                <select id="country1" aria-label="اختر الدولة الأولى">
-                    <option value="">-- اختر دولة --</option>
-                </select>
-            </div>
-
-            <div class="country-selector">
-                <label for="search2">🔍 ابحث عن الدولة الثانية (اختياري):</label>
-                <input 
-                    type="text" 
-                    id="search2" 
-                    class="country-search" 
-                    placeholder="اكتب اسم الدولة..." 
-                    aria-label="البحث عن الدولة الثانية">
-                <select id="country2" aria-label="اختر الدولة الثانية">
-                    <option value="">-- اختر دولة --</option>
-                </select>
-            </div>
-
-            <div class="button-group">
-                <button onclick="compareCountries()" class="btn-compare" title="اضغط أو اطبع Enter للمقارنة">عرض المقارنة</button>
-                <button onclick="clearSelections()" class="btn-clear" title="امسح الاختيارات">🔄 إعادة تعيين</button>
-            </div>
-        </div>
-
-        <div id="visa-info" class="visa-info"></div>
-
-        <div class="quick-select">
-            <p>⭐ الدول الشهيرة:</p>
-            <div class="quick-buttons">
-                <button onclick="selectCountry('مصر', 1)" class="quick-btn">🇪🇬 مصر</button>
-                <button onclick="selectCountry('السعودية', 1)" class="quick-btn">🇸🇦 السعودية</button>
-                <button onclick="selectCountry('الإمارات', 1)" class="quick-btn">🇦🇪 الإمارات</button>
-                <button onclick="selectCountry('فرنسا', 1)" class="quick-btn">🇫🇷 فرنسا</button>
-                <button onclick="selectCountry('تركيا', 1)" class="quick-btn">🇹🇷 تركيا</button>
-                <button onclick="selectCountry('اليابان', 1)" class="quick-btn">🇯🇵 اليابان</button>
-            </div>
-        </div>
-
-        <div id="comparison" class="comparison-section"></div>
-        
+  <!-- المحتوى -->
+  <main class="content">
+    <div class="select-group">
+      <label for="country1">الدولة الأولى:</label>
+      <select id="country1">
+        <option value="">-- اختر دولة --</option>
+      </select>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <script src="script.js"></script>
+    <div class="select-group">
+      <label for="country2">الدولة الثانية:</label>
+      <select id="country2">
+        <option value="">-- اختر دولة --</option>
+      </select>
+    </div>
+
+    <button id="compareBtn">قارن</button>
+  </main>
+
+  <!-- نتيجة المقارنة -->
+  <section id="result">
+    <!-- كروت الدول ستظهر هنا -->
+  </section>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
