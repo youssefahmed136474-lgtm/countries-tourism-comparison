@@ -1,1 +1,58 @@
+const planets = {
+  mercury:{name:"عطارد",emoji:"☿",moons:0,size:"4,879 كم",distance:"57.9 مليون كم"},
+  venus:{name:"الزهرة",emoji:"♀",moons:0,size:"12,104 كم",distance:"108.2 مليون كم"},
+  earth:{name:"الأرض",emoji:"🌍",moons:1,size:"12,742 كم",distance:"149.6 مليون كم"},
+  mars:{name:"المريخ",emoji:"♂",moons:2,size:"6,779 كم",distance:"227.9 مليون كم"},
+  jupiter:{name:"المشتري",emoji:"♃",moons:79,size:"139,820 كم",distance:"778.5 مليون كم"},
+  saturn:{name:"زحل",emoji:"♄",moons:82,size:"116,460 كم",distance:"1.43 مليار كم"},
+  uranus:{name:"أورانوس",emoji:"♅",moons:27,size:"50,724 كم",distance:"2.87 مليار كم"},
+  neptune:{name:"نبتون",emoji:"♆",moons:14,size:"49,244 كم",distance:"4.5 مليار كم"},
+};
 
+// إضافة خيارات لكل select
+const select1 = document.getElementById("planet1");
+const select2 = document.getElementById("planet2");
+for(let key in planets){
+  let opt1 = document.createElement("option");
+  opt1.value = key; opt1.text = planets[key].name; select1.add(opt1);
+  let opt2 = document.createElement("option");
+  opt2.value = key; opt2.text = planets[key].name; select2.add(opt2);
+}
+
+// إنشاء الكرت
+function createCard(planet){
+  const div = document.createElement("div");
+  div.className = "planet-card";
+  div.innerHTML = `<div class="emoji">${planet.emoji}</div>
+                   <h2>${planet.name}</h2>
+                   <p>عدد الأقمار: ${planet.moons}</p>
+                   <p>الحجم: ${planet.size}</p>
+                   <p>المسافة عن الشمس: ${planet.distance}</p>`;
+  return div;
+}
+
+// عرض المقارنة
+function comparePlanets(){
+  const p1 = select1.value, p2 = select2.value;
+  if(!p1 || !p2){alert("اختر كوكبين"); return;}
+  const infoDiv = document.getElementById("planet-info");
+  infoDiv.innerHTML = ""; // مسح المحتوى السابق
+  infoDiv.appendChild(createCard(planets[p1]));
+  infoDiv.appendChild(createCard(planets[p2]));
+}
+
+// ربط الزر
+document.getElementById("compareBtn").addEventListener("click",comparePlanets);
+
+// --- لتكبير طول JS عملياً: تكرار البيانات الوهمية وحلقات ---
+const extraData = [];
+for(let i=0;i<1000;i++){
+  extraData.push({name:"كوكب وهمي "+i,emoji:"🪐",moons:i%5,size:(5000+i)+" كم",distance:(100+i)+" مليون كم"});
+}
+function addExtraCards(){
+  const infoDiv = document.getElementById("planet-info");
+  for(let i=0;i<extraData.length;i++){
+    infoDiv.appendChild(createCard(extraData[i]));
+  }
+}
+// يمكن استدعاء addExtraCards() عند الحاجة
