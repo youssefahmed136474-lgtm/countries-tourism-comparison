@@ -2,27 +2,42 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>مقارنة الدول</title>
+<title>مقارنة بين دولتين</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>اختر دولتين للمقارنة</h1>
+<div class="container">
+  <!-- الهيدر -->
+  <header class="header">
+    <h1>🌎 مقارنة بين دولتين</h1>
+    <p>اكتشف أهم المعلومات بسرعة وبشكل جذاب</p>
+  </header>
 
-<div class="selectors">
-  <div>
-    <label>الدولة الأولى:</label>
-    <select id="country1"></select>
-  </div>
-  <div>
-    <label>الدولة الثانية:</label>
-    <select id="country2"></select>
-  </div>
+  <!-- المحتوى -->
+  <main class="content">
+    <div class="select-group">
+      <label for="country1">الدولة الأولى:</label>
+      <select id="country1">
+        <option value="">-- اختر دولة --</option>
+      </select>
+    </div>
+
+    <div class="select-group">
+      <label for="country2">الدولة الثانية:</label>
+      <select id="country2">
+        <option value="">-- اختر دولة --</option>
+      </select>
+    </div>
+
+    <button id="compareBtn">قارن</button>
+  </main>
+
+  <!-- نتيجة المقارنة -->
+  <section id="result">
+    <!-- كروت الدول ستظهر هنا -->
+  </section>
 </div>
-
-<button onclick="compareCountries()">قارن</button>
-
-<div id="result"></div>
 
 <script src="script.js"></script>
 </body>
