@@ -276,10 +276,7 @@ const visaRequirements = {
         noVisa: ["إيران"],
         onArrival: ["الأردن"]
     },
-    "إسرائيل": {
-        noVisa: ["فرنسا", "كندا"],
-        onArrival: ["تركيا"]
-    },
+    
     "بوتان": {
         noVisa: [],
         onArrival: ["الهند"]
@@ -358,7 +355,7 @@ const visaRequirements = {
     const countriesData = {
         "مصر": {
             flag: "🇪🇬",
-            العاصمة: "القاهرة",
+            العاصمة: "العاصمه الاداريةالجديده",
             lat: 26.8206,
             lng: 30.8025,
             المساحة: "1,002,000 كم²",
@@ -370,13 +367,14 @@ const visaRequirements = {
             أفضل_وقت_للسياحة: "أكتوبر - أبريل",
             exchangeRate: 52.5, // سعر صرف الجنيه المصري مقابل الدولار الأمريكي       
             الأماكن_السياحية: [
-                { name: "أهرامات الجيزة", desc: "أحد عجائب الدنيا السبع" , img: "\images/egypt/1.jpg"},
-                { name: "معابد الأقصر", desc: "آثار فرعونية عظيمة" , img: "\images/egypt/2.jpg"},
-                { name: "البحر الأحمر", desc: "شواطئ جميلة للسباحة والغوص" },
-                { name: "النيل", desc: "أطول نهر في العالم" },
-                { name: "القاهرة الإسلامية", desc: "مساجد وعمارة إسلامية" }
+                { name: "أهرامات الجيزة", desc: "أحد عجائب الدنيا السبع" ,img:"/images/مصر/download.jpg" },
+                { name: "معابد الأقصر", desc: "آثار فرعونية عظيمة" ,img:"/images/مصر/download (1).jpg" },
+                { name: "المتحف المصري الجديد", desc:"اكبر متحف في العالم" ,img:"/images/مصر/download (4).jpg" },
+                { name: "النيل", desc: "أطول نهر في العالم" ,img:"/images/مصر/download (3).jpg" },
+                { name: "القاهرة الإسلامية", desc: "مساجد وعمارة إسلامية",img:"/images/مصر/download (2).jpg" }
             ],
-            الصور: ["\images/egypt/1.jpg", "\images/egypt/2.jpg", "\images/egypt/3.jpg", "\images/egypt/4.jpg", "\images/egypt/5.jpg", "\images/egypt/6.jpg",]
+           
+            
         },
         "السعودية": {
             flag: "🇸🇦",
@@ -391,11 +389,11 @@ const visaRequirements = {
             الاتصالات: "5G في المدن الكبرى",
             أفضل_وقت_للسياحة: "نوفمبر - مارس",
             الأماكن_السياحية: [
-                { name: "مكة المكرمة", desc: "أقدس موقع إسلامي" },
-                { name: "المدينة المنورة", desc: "ثاني أقدس موقع إسلامي" },
-                { name: "العلا", desc: "آثار ومناظر صحراوية خاصة" },
-                { name: "الرياض", desc: "عاصمة حديثة بتطور سريع" },
-                { name: "جزيرة فرسان", desc: "جزر ساحرة في البحر الأحمر" }
+                { name: "مكة المكرمة", desc: "أقدس موقع إسلامي",img:"/images/السعودية/hajj-rituals-makkah-accorhotels.jpg" },
+                { name: "المدينة المنورة", desc: "ثاني أقدس موقع إسلامي",img:"/images/السعودية/download.jpg" },
+                { name: "العلا", desc: "آثار ومناظر صحراوية خاصة",img:"/images/السعودية/download (1).jpg" },
+                { name: "الرياض", desc: "عاصمة حديثة بتطور سريع" ,img:"/images/السعودية/download (2).jpg"},
+                { name: "جزيرة فرسان", desc: "جزر ساحرة في البحر الأحمر",img:"/images/السعودية/download (3).jpg" }
             ],
             exchangeRate: 3.75 // سعر صرف الريال السعودي مقابل الدولار الأمريكي
         },
@@ -454,15 +452,15 @@ const visaRequirements = {
             الاتصالات: "4G/5G ممتاز",
             أفضل_وقت_للسياحة: "مايو - سبتمبر",
             الأماكن_السياحية: [
-                { name: "برج إيفل", desc: "برج حديدي شهير في باريس" },
-                { name: "متحف اللوفر", desc: "أكبر متحف فني في العالم" },
-                { name: "قصر فرساي", desc: "قصر ملكي فخم" },
-                { name: "كاتدرائية نوتردام", desc: "معمار قوطي عظيم" },
-                { name: "منطقة الشمبانيا", desc: "منطقة العنب والنبيذ الفاخر" },
+                { name: "برج إيفل", desc: "برج حديدي شهير في باريس",img:"/images/فرنسا/download (5).jpg" },
+                { name: "متحف اللوفر", desc: "أكبر متحف فني في العالم",img:"/images/فرنسا/download.jpg" },
+                { name: "قصر فرساي", desc: "قصر ملكي فخم",img : "/images/فرنسا/download (1).jpg" },
+                { name: "كاتدرائية نوتردام", desc: "معمار قوطي عظيم",img:"/images/فرنسا/download (2).jpg" },
+                { name: "منطقة الشمبانيا", desc: "منطقة العنب والنبيذ الفاخر",img:"/images/فرنسا/download (3).jpg" },
             ],
             exchangeRate:1.15 // سعر صرف اليورو مقابل الدولار الأمريكي
         },
-        "إيطاليا": {
+        "ايطاليا": {
             flag: "🇮🇹",
             lat: 41.8719,
             lng: 12.5674,
@@ -475,11 +473,11 @@ const visaRequirements = {
             الاتصالات: "4G/5G جيد",
             أفضل_وقت_للسياحة: "أبريل - أكتوبر",
             الأماكن_السياحية: [
-                { name: "روما", desc: "عاصمة إمبراطورية قديمة" },
-                { name: "البندقية", desc: "مدينة الجسور والقنوات" },
-                { name: "فلورنسا", desc: "مركز الفن والثقافة الإيطالية" },
-                { name: "ساحل أمالفي", desc: "شواطئ جميلة في جنوب إيطاليا" },
-                { name: "ميلان", desc: "عاصمة الموضة والتصميم" },
+                { name: "روما", desc: "عاصمة إمبراطورية قديمة" ,img:"/images/ايطاليا/download (4).jpg" },
+                { name: "البندقية", desc: "مدينة الجسور والقنوات" ,img:"/images/ايطاليا/download.jpg" },
+                { name: "فلورنسا", desc: "مركز الفن والثقافة الإيطالية",img:"/images/ايطاليا/download (1).jpg" },
+                { name: "ساحل أمالفي", desc: "شواطئ جميلة في جنوب إيطاليا" ,img:"/images/ايطاليا/download (2).jpg" },
+                { name: "ميلان", desc: "عاصمة الموضة والتصميم" ,img:"/images/ايطاليا/download (3).jpg" },
             ],
                 exchangeRate:1.15 // سعر صرف اليورو مقابل الدولار الأمريكي
         },
@@ -496,11 +494,11 @@ const visaRequirements = {
             الاتصالات: "4G جيد",
             أفضل_وقت_للسياحة: "مايو - سبتمبر",
             الأماكن_السياحية: [
-                { name: "أثينا", desc: "عاصمة الحضارة اليونانية" },
-                { name: "سانتوريني", desc: "جزيرة خيالية بقباب زرقاء" },
-                { name: "ميكونوس", desc: "جزيرة سياحية شهيرة" },
-                { name: "جزيرة كريت", desc: "أكبر الجزر اليونانية" },
-                { name: "الأكروبول", desc: "معبد بارثينون القديم" }
+                { name: "أثينا", desc: "عاصمة الحضارة اليونانية" ,img:"/images/اليونان/download (4).jpg" },
+                { name: "سانتوريني", desc: "جزيرة خيالية بقباب زرقاء",img:"/images/اليونان/download.jpg" },
+                { name: "ميكونوس", desc: "جزيرة سياحية شهيرة",img:"/images/اليونان/download (1).jpg" },
+                { name: "جزيرة كريت", desc: "أكبر الجزر اليونانية",img:"images/اليونان/دليلك-الكامل-حول-جزيرة-كريت.jpg" },
+                { name: "الأكروبول", desc: "معبد بارثينون القديم",img:"/images/اليونان/download (2).jpg" }
             ],
             exchangeRate:1.15 // سعر صرف اليورو مقابل الدولار الأمريكي
         },
@@ -517,11 +515,11 @@ const visaRequirements = {
             الاتصالات: "5G متقدم",
             أفضل_وقت_للسياحة: "مارس - مايو وسبتمبر - نوفمبر",
             الأماكن_السياحية: [
-                { name: "طوكيو", desc: "عاصمة حديثة وتقليدية" },
-                { name: "معبد فوشيمي", desc: "معبد شهير بألف بوابة" },
-                { name: "جبل فوجي", desc: "أيقونة طبيعية يابانية" },
-                { name: "كيوتو", desc: "عاصمة الثقافة اليابانية التقليدية" },
-                { name: "ديزني لاند طوكيو", desc: "حديقة ترفيهية عملاقة" }
+                { name: "طوكيو", desc: "عاصمة حديثة وتقليدية" , img:"/images/اليابان/download (2).jpg" },
+                { name: "معبد فوشيمي", desc: "معبد شهير بألف بوابة" , img:"/images/اليابان/download.jpg" },
+                { name: "جبل فوجي", desc: "أيقونة طبيعية يابانية", img:"/images/اليابان/download (1).jpg" },
+                { name: "كيوتو", desc: "عاصمة الثقافة اليابانية التقليدية" , img:"/images/اليابان/download (3).jpg" },
+                { name: "ديزني لاند طوكيو", desc: "حديقة ترفيهية عملاقة", img:"/images/اليابان/download (4).jpg" }
             ],
             exchangeRate:183
         },
@@ -560,11 +558,11 @@ const visaRequirements = {
             الاتصالات: "4G/5G جيد",
             أفضل_وقت_للسياحة: "مايو - سبتمبر",
             الأماكن_السياحية: [
-                { name: "برشلونة", desc: "مدينة ساحلية بعمارة حديثة" },
-                { name: "مدريد", desc: "عاصمة إسبانيا الثقافية" },
-                { name: "الحمراء", desc: "قصر إسلامي قديم في غرناطة" },
-                { name: "ساحل كوستا ديل سول", desc: "شواطئ البحر المتوسط" },
-                { name: "ساغرادا فاميليا", desc: "كنيسة معمارية فريدة" }
+                { name: "برشلونة", desc: "مدينة ساحلية بعمارة حديثة" ,img:"/images/إسبانيا/images.jpg" },
+                { name: "مدريد", desc: "عاصمة إسبانيا الثقافية", img:"/images/إسبانيا/download.jpg" },
+                { name: "الحمراء", desc: "قصر إسلامي قديم في غرناطة",img:"/images/إسبانيا/download (1).jpg" },
+                { name: "ساحل كوستا ديل سول", desc: "شواطئ البحر المتوسط",img:"/images/إسبانيا/download (2).jpg" },
+                { name: "ساغرادا فاميليا", desc: "كنيسة معمارية فريدة", img:"/images/إسبانيا/download (3).jpg" }
             ],
             exchangeRate:1.15 // سعر صرف اليورو مقابل الدولار الأمريكي
         },
@@ -580,11 +578,11 @@ const visaRequirements = {
             سرعة_الإنترنت: "25 Mbps",
             الاتصالات: "4G/5G جيد",
         الأماكن_السياحية: [
-                { name: "قرطاج", desc: "مدينة أثرية تاريخية" },
-                { name: "المدينة العتيقة", desc: "سوق تقليدي ومواقع تاريخية" },
-                { name: "سيدي بو سعيد", desc: "قرية ساحلية جميلة" },
-                { name: "الصحراء الكبرى", desc: "تجربة صحراوية فريدة" },
-                { name: "جزيرة جربة", desc: "جزيرة سياحية بشواطئ رائعة" }
+                { name: "قرطاج", desc: "مدينة أثرية تاريخية",img:"/images/تونس/download (5).jpg" },
+                { name: "المدينة العتيقة", desc: "سوق تقليدي ومواقع تاريخية" ,img:"/images/تونس/download.jpg" },
+                { name: "سيدي بو سعيد", desc: "قرية ساحلية جميلة",img:"/images/تونس/download (1).jpg" },
+                { name: "الصحراء الكبرى", desc: "تجربة صحراوية فريدة" ,img:"/images/تونس/download (2).jpg" },
+                { name: "جزيرة جربة", desc: "جزيرة سياحية بشواطئ رائعة",img:"/images/تونس/download.jpg" }
             ],
             exchangeRate:2.94
         },
@@ -601,11 +599,11 @@ const visaRequirements = {
             الاتصالات: "4G جيد",
             أفضل_وقت_للسياحة: "مارس - مايو وسبتمبر - نوفمبر",
             الأماكن_السياحية: [
-                { name: "مراكش", desc: "مدينة تاريخية وأسواق تقليدية" },
-                { name: "فاس", desc: "مدينة قديمة بعمارة إسلامية رائعة" },
-                { name: "الصحراء الكبرى", desc: "تجربة صحراوية فريدة" },
-                { name: "الرباط", desc: "عاصمة المغرب وموقع تاريخي" },
-                { name: "شفشاون", desc: "مدينة زرقاء ساحرة في الجبال" }
+                { name: "مراكش", desc: "مدينة تاريخية وأسواق تقليدية",img:"/images/المغرب/download (3).jpg" },
+                { name: "فاس", desc: "مدينة قديمة بعمارة إسلامية رائعة" ,img:"images/المغرب/مدينة-فاس-3-1536x1024.jpg" },
+                 { name: "الرباط", desc: "عاصمة المغرب وموقع تاريخي",img:"/images/المغرب/download.jpg" },
+                { name: "شفشاون", desc: "مدينة زرقاء ساحرة في الجبال",img:"/images/المغرب/download (1).jpg" }
+                
             ],
             exchangeRate:9.5
         },
@@ -622,11 +620,11 @@ const visaRequirements = {
             الاتصالات: "4G محدود",
             أفضل_وقت_للسياحة: "أبريل - أكتوبر",
             الأماكن_السياحية: [
-                { name: "دمشق القديمة", desc: "مدينة تاريخية بعمارة إسلامية رائعة" },
-                { name: "حلب", desc: "مدينة قديمة بتراث ثقافي غني" },
-                { name: "تدمر", desc: "مدينة أثرية في الصحراء" },
-                { name: "السور", desc: "مدينة ساحلية جميلة" },
-                { name: "قلعة الحصن", desc: "قلعة صليبية تاريخية" }
+                { name: "دمشق القديمة", desc: "مدينة تاريخية بعمارة إسلامية رائعة" ,img:"/images/سوريا/download (4).jpg"},
+                { name: "حلب", desc: "مدينة قديمة بتراث ثقافي غني",img:"/images/سوريا/download.jpg" },
+                { name: "تدمر", desc: "مدينة أثرية في الصحراء",img:"/images/سوريا/download (1).jpg" },
+                { name: "السور", desc: "مدينة ساحلية جميلة",img:"/images/سوريا/download (2).jpg" },
+                { name: "قلعة الحصن", desc: "قلعة صليبية تاريخية",img:"/images/سوريا/download (3).jpg" }
             ],
             exchangeRate: 10000
         },
@@ -643,34 +641,14 @@ const visaRequirements = {
             الاتصالات: "4G جيد",
             أفضل_وقت_للسياحة: "مارس - مايو وسبتمبر - نوفمبر",
             الأماكن_السياحية: [
-                { name: "القدس", desc: "مدينة تاريخية وثقافية مهمة" },
-                { name: "بيت لحم", desc: "مدينة قديمة بتراث ثقافي غني" },
-                { name: "غزة", desc: "مدينة ساحلية جميلة" },
-                { name: "نابلس", desc: "مدينة تاريخية بعمارة إسلامية رائعة" },
-                { name: "الخليل", desc: "مدينة قديمة بتراث ثقافي غني" }
+                { name: "القدس", desc: "مدينة تاريخية وثقافية مهمة" ,img:"/images/فلسطين/download (2).jpg" },
+                { name: "بيت لحم", desc: "مدينة قديمة بتراث ثقافي غني",img:"/images/فلسطين/download.jpg" },
+                { name: "غزة", desc: "مدينة ساحلية جميلة",img:"/images/فلسطين/download (1).jpg" },
+                { name: "نابلس", desc: "مدينة تاريخية بعمارة إسلامية رائعة" ,img:"/images/فلسطين/download (3).jpg" },
+                { name: "الخليل", desc: "مدينة قديمة بتراث ثقافي غني",img:"/images/فلسطين/download (4).jpg" }
             ]
         },
-        "الاردن": {
-            flag: "🇯🇴",
-            lat: 30.5852,
-            lng: 36.2384,
-            العاصمة: "عمان",
-            المساحة: "89,342 كم²",
-            السكان: "10.2 مليون نسمة",
-            العملة: "الدينار الأردني",
-            ترتيب_البنية_التحتية: "40 عالمياً",
-            سرعة_الإنترنت: "20 Mbps",
-            الاتصالات: "4G جيد",
-            أفضل_وقت_للسياحة: "أبريل - أكتوبر",
-            الأماكن_السياحية: [
-                { name: "البتراء", desc: "مدينة أثرية منحوتة في الصخر" },
-                { name: "وادي رم", desc: "صحراء خلابة بتكوينات صخرية فريدة" },
-                { name: "البحر الميت", desc: "أدنى نقطة على سطح الأرض ومياه مالحة للغاية" },
-                { name: "عمان", desc: "عاصمة حديثة بتراث ثقافي غني" },
-                { name: "جرش", desc: "مدينة رومانية قديمة محفوظة جيداً" }
-            ],
-            exchangeRate: 0.71
-        },
+        
         "لبنان": {
             flag: "🇱🇧",
             lat: 33.8547,
@@ -744,7 +722,7 @@ const visaRequirements = {
             العملة: "الجنيه الإسترليني",
             ترتيب_البنية_التحتية: "10 عالمياً",
             سرعة_الإنترنت: "35 Mbps",
-            الاتصالات: "4G/5G ممتاز",
+            الاتصالات: "4G/5G ممت   از",
             أفضل_وقت_للسياحة: "مايو - سبتمبر",
             الأماكن_السياحية: [
                 { name: "لندن", desc: "عاصمة تاريخية وثقافية" },
@@ -768,11 +746,11 @@ const visaRequirements = {
             الاتصالات: "4G/5G ممتاز",
             أفضل_وقت_للسياحة: "مايو - سبتمبر",
             الأماكن_السياحية: [
-                { name: "برلين", desc: "عاصمة حديثة بتاريخ غني" },
-                { name: "قلعة نويشفانشتاين", desc: "قلعة خيالية في جبال الألب" },
-                { name: "الغابة السوداء", desc: "منطقة طبيعية خلابة" },
-                { name: "كولونيا", desc: "مدينة تاريخية على نهر الراين" },
-                { name: "ميونيخ", desc: "مدينة بيرة وثقافة بافارية" }
+                { name: "برلين", desc: "عاصمة حديثة بتاريخ غني",img:"/images/ألمانيا/download.jpg" },
+                { name: "قلعة نويشفانشتاين", desc: "قلعة خيالية في جبال الألب",img:"/images/ألمانيا/download (1).jpg" },
+                { name: "الغابة السوداء", desc: "منطقة طبيعية خلابة",img:"/images/ألمانيا/download (2).jpg" },
+                { name: "كولونيا", desc: "مدينة تاريخية على نهر الراين",img:"/images/ألمانيا/download (3).jpg" },
+                { name: "ميونيخ", desc: "مدينة بيرة وثقافة بافارية",img:"/images/ألمانيا/download (4).jpg" }
             ],
             exchangeRate:1.15
         },
@@ -1080,8 +1058,8 @@ const visaRequirements = {
         "الاتصالات": "4G جيد",
         "أفضل_وقت_للسياحة": "نوفمبر - أبريل",
         "الأماكن_السياحية": [
-            { name: "جزر المالديف", desc: "شواطئ بيضاء ومياه صافية" },
-            { name: "ماليه", desc: "عاصمة صغيرة وحيوية" }
+            { name: "جزر المالديف", desc: "شواطئ بيضاء ومياه صافية",img:"/images/المالديف/download (5).jpg" },
+            { name: "ماليه", desc: "عاصمة صغيرة وحيوية",img:"/images/المالديف/download.jpg" }
         ],
         exchangeRate: 15.4
     },
@@ -2010,50 +1988,14 @@ const visaRequirements = {
         "الاتصالات": "4G محدود",
         "أفضل_وقت_للسياحة": "أكتوبر - أبريل",
         "الأماكن_السياحية": [
-            { name: "بغداد", desc: "عاصمة حضارة" },
-            { name: "أور", desc: "موقع أثري قديم" },
-            { name: "النجف", desc: "مدينة دينية مقدسة" }
+            { name: "بغداد", desc: "عاصمة حضارة", img: "/images/العراق/download (1).jpg" },
+            { name: "أور", desc: "موقع أثري قديم", img: "/images/العراق/download.jpg" },
+            { name: "النجف", desc: "مدينة دينية مقدسة", img: "/images/العراق/download (2).jpg" }
         ],
         exchangeRate: 1460
     },
-    "إسرائيل": {
-        flag: "🇮🇱",
-        lat: 31.0461,
-        lng: 34.8516,
-        "العاصمة": "القدس",
-        "المساحة": "20,770 كم²",
-        "السكان": "9.5 مليون نسمة",
-        "العملة": "شيقل إسرائيلي",
-        "ترتيب_البنية_التحتية": "35 عالمياً",
-        "سرعة_الإنترنت": "35 Mbps",
-        "الاتصالات": "4G ممتاز",
-        "أفضل_وقت_للسياحة": "أبريل - مايو",
-        "الأماكن_السياحية": [
-            { name: "القدس القديمة", desc: "موقع ديني مقدس" },
-            { name: "تل أبيب", desc: "مدينة حديثة ساحلية" },
-            { name: "البحر الميت", desc: "أخفض نقطة على الأرض" }
-        ],
-        exchangeRate: 3.75
-    },
-    "فلسطين": {
-        flag: "🇵🇸",
-        lat: 31.9454,
-        lng: 35.2338,
-        "العاصمة": "رام الله",
-        "المساحة": "6,220 كم²",
-        "السكان": "5 مليون نسمة",
-        "العملة": "دينار فلسطيني",
-        "ترتيب_البنية_التحتية": "90 عالمياً",
-        "سرعة_الإنترنت": "14 Mbps",
-        "الاتصالات": "4G متوسط",
-        "أفضل_وقت_للسياحة": "أبريل - مايو",
-        "الأماكن_السياحية": [
-            { name: "بيت لحم", desc: "مدينة دينية مقدسة" },
-            { name: "رام الله", desc: "عاصمة إدارية" },
-            { name: "ريحا", desc: "مدينة أثرية" }
-        ],
-        exchangeRate: 3.8
-    },
+   
+    
     "الأردن": {
         flag: "🇯🇴",
         lat: 31.9454,
@@ -2067,9 +2009,9 @@ const visaRequirements = {
         "الاتصالات": "4G جيد",
         "أفضل_وقت_للسياحة": "أكتوبر - أبريل",
         "الأماكن_السياحية": [
-            { name: "عمّان", desc: "عاصمة حديثة" },
-            { name: "البحر الميت", desc: "أخفض نقطة بالعالم" },
-            { name: "البتراء", desc: "مدينة وردية قديمة" }
+            { name: "عمّان", desc: "عاصمة حديثة", img: "/images/الأردن/download (3).jpg" },
+            { name: "البحر الميت", desc: "أخفض نقطة بالعالم", img: "/images/الأردن/download.jpg" },
+            { name: "البتراء", desc: "مدينة وردية قديمة", img: "/images/الأردن/download (1).jpg" }
         ],
         exchangeRate: 0.71
     },
@@ -2148,25 +2090,6 @@ const visaRequirements = {
             { name: "بيتاغونيا", desc: "نطاق جليدي مذهل" }
         ],
         exchangeRate: 950
-    },
-    "أرجنتينا": {
-        flag: "🇦🇷",
-        lat: -38.4161,
-        lng: -63.6167,
-        "العاصمة": "بوينس آيرس",
-        "المساحة": "2,780,400 كم²",
-        "السكان": "46 مليون نسمة",
-        "العملة": "بيزو أرجنتيني",
-        "ترتيب_البنية_التحتية": "48 عالمياً",
-        "سرعة_الإنترنت": "25 Mbps",
-        "الاتصالات": "4G جيد",
-        "أفضل_وقت_للسياحة": "نوفمبر - فبراير",
-        "الأماكن_السياحية": [
-            { name: "بوينس آيرس", desc: "باريس أمريكا الجنوبية" },
-            { name: "شلالات إيجوازو", desc: "شلالات ساحرة" },
-            { name: "بويرتو ريكو", desc: "مدينة سياحية" }
-        ],
-        exchangeRate: 820
     },
     "أوروغواي": {
         flag: "🇺🇾",
@@ -2453,23 +2376,7 @@ const visaRequirements = {
         ],
         exchangeRate: 0.95
     },
-    "الجميع": {
-        flag: "🌍",
-        lat: 0,
-        lng: 0,
-        "العاصمة": "مختلفة",
-        "المساحة": "مختلفة",
-        "السكان": "مختلف",
-        "العملة": "مختلفة",
-        "ترتيب_البنية_التحتية": "مختلف",
-        "سرعة_الإنترنت": "مختلفة",
-        "الاتصالات": "مختلفة",
-        "أفضل_وقت_للسياحة": "مختلف",
-        "الأماكن_السياحية": [
-            { name: "العالم", desc: "جميع الدول متاحة الآن" }
-        ],
-        exchangeRate: 1
-    }
+    
 
     };
 
@@ -2829,111 +2736,78 @@ function createCountryCard(country, data, countryId) {
 
     return `
     <div class="country-card">
-
         <h2 class="country-title">${data.flag} ${country}</h2>
-
         <div class="info-grid">
-
             <div class="info-item">
                 <strong>العاصمة</strong>
                 <p>${data.العاصمة}</p>
             </div>
-
             <div class="info-item">
                 <strong>المساحة</strong>
                 <p>${data.المساحة}</p>
             </div>
-
             <div class="info-item">
                 <strong>السكان</strong>
                 <p>${data.السكان}</p>
             </div>
-
             <div class="info-item">
                 <strong>العملة</strong>
                 <p>1 دولار ≈ ${data.exchangeRate} ${data.العملة}</p>
             </div>
-
             <div class="info-item">
                 <strong>البنية التحتية</strong>
                 <p>${data.ترتيب_البنية_التحتية}</p>
             </div>
-
             <div class="info-item">
                 <strong>سرعة الإنترنت</strong>
                 <p>${data.سرعة_الإنترنت}</p>
             </div>
-
             <div class="info-item">
                 <strong>الاتصالات</strong>
                 <p>${data.الاتصالات}</p>
             </div>
-
             <div class="info-item">
                 <strong>أفضل وقت للسياحة</strong>
                 <p>${data.أفضل_وقت_للسياحة}</p>
             </div>
-
         </div>
-
-
-        <div class="map-container">
-            <div id="map-${countryId}"></div>
-        </div>
-
-
         <div class="attractions-section">
-
             <h3>🎭 أبرز الأماكن السياحية</h3>
-
             <div class="attractions-list">
                 ${attractionsHTML}
             </div>
-
         </div>
-
-
         <div class="booking-section">
-
             <h3>🏨 ابدأ رحلتك الآن</h3>
-
             <div class="booking-buttons">
-
                 <a href="https://www.booking.com/searchresults.html?ss=${country}"
                 target="_blank"
                 class="booking-btn">
-
                 🏨 احجز فندق على Booking
                 </a>
-
-
                 <a href="https://www.airbnb.com/s/${country}/homes"
                 target="_blank"
                 class="booking-btn airbnb">
-
                 🏠 ابحث عن شقة على Airbnb
                 </a>
-
             </div>
-
         </div>
-
+        <div class="map-container" style="margin-top: 30px;">
+            <h3 style="color:#667eea; margin-bottom:10px;">🗺️ الموقع الجغرافي على الخريطة</h3>
+            <div id="map-${countryId}"></div>
+        </div>
     </div>
     `;
 }
 
 // دالة عرض التفاصيل والمقارنة
 function compareCountries() {
-
     const country1 = document.getElementById("country1").value;
     const country2 = document.getElementById("country2").value;
     const comparisonDiv = document.getElementById("comparison");
 
     if (!country1 && !country2) {
-
-        comparisonDiv.innerHTML =
-            `<p class="warning">⚠️ يرجى اختيار دولة واحدة على الأقل</p>`;
-
+        comparisonDiv.innerHTML = `<p class="warning">⚠️ يرجى اختيار دولة واحدة على الأقل</p>`;
         return;
     }
 
@@ -2953,16 +2827,109 @@ function compareCountries() {
 
     comparisonDiv.innerHTML = html;
 
-    setTimeout(() => {
-        if (country1) {
-            loadMap(countriesData[country1], "map-1");
-        }
-        if (country2) {
-            loadMap(countriesData[country2], "map-2");
-        }
-    }, 200);
-
+    // إظهار خريطة عامة في الأسفل بعد المقارنة
+    const mapSection = document.getElementById("global-map-section");
+    if (country1 || country2) {
+        let mapHtml = `<div class='map-container' style='margin-top:30px;'>`;
+        mapHtml += `<h3 style='color:#667eea; margin-bottom:10px;'>🗺️ الموقع الجغرافي للدول المختارة</h3>`;
+        mapHtml += `<div id='global-map' style='height:400px;'></div>`;
+        mapHtml += `</div>`;
+        mapSection.innerHTML = mapHtml;
+        setTimeout(() => {
+            loadGlobalMap(country1, country2);
+        }, 200);
+    } else {
+        mapSection.innerHTML = "";
+    }
 }
+
+// رسم خريطة عامة للدول المختارة
+function loadGlobalMap(country1, country2) {
+    const mapDiv = document.getElementById("global-map");
+    if (!mapDiv) return;
+    mapDiv.innerHTML = "";
+    let center = [30, 20];
+    let zoom = 2;
+    let markers = [];
+    let map;
+    // حساب مركز الخريطة بناءً على الدول المختارة
+    if (country1 && countriesData[country1] && country2 && countriesData[country2]) {
+        const lat1 = countriesData[country1].lat;
+        const lng1 = countriesData[country1].lng;
+        const lat2 = countriesData[country2].lat;
+        const lng2 = countriesData[country2].lng;
+        center = [ (lat1+lat2)/2, (lng1+lng2)/2 ];
+        zoom = 3;
+    } else if (country1 && countriesData[country1]) {
+        center = [countriesData[country1].lat, countriesData[country1].lng];
+        zoom = 5;
+    } else if (country2 && countriesData[country2]) {
+        center = [countriesData[country2].lat, countriesData[country2].lng];
+        zoom = 5;
+    }
+    map = L.map("global-map").setView(center, zoom);
+    L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            attribution: "© OpenStreetMap",
+            maxZoom: 19
+        }
+    ).addTo(map);
+    if (country1 && countriesData[country1]) {
+        const marker1 = L.marker([countriesData[country1].lat, countriesData[country1].lng])
+            .addTo(map)
+            .bindPopup(`${countriesData[country1].flag} ${country1}`)
+            .openPopup();
+        markers.push(marker1);
+    }
+    if (country2 && countriesData[country2]) {
+        const marker2 = L.marker([countriesData[country2].lat, countriesData[country2].lng])
+            .addTo(map)
+            .bindPopup(`${countriesData[country2].flag} ${country2}`)
+            .openPopup();
+        markers.push(marker2);
+    }
+    // ضبط حدود الخريطة لتشمل جميع العلامات
+    if (markers.length > 1) {
+        const group = new L.featureGroup(markers);
+        map.fitBounds(group.getBounds().pad(0.3));
+    }
+}
+
+// --- إظهار خريطة الدولة مباشرة عند اختيارها ---
+function showSingleMap(selectId, mapDivId) {
+    const country = document.getElementById(selectId).value;
+    const mapDiv = document.getElementById(mapDivId);
+    if (!country) {
+        mapDiv.innerHTML = "";
+        return;
+    }
+    const data = countriesData[country];
+    if (!data) {
+        mapDiv.innerHTML = "";
+        return;
+    }
+    mapDiv.innerHTML = `<div class='map-container'><div id='single-${mapDivId}' style='height:300px;'></div></div>`;
+    setTimeout(() => {
+        loadMap(data, `single-${mapDivId}`);
+    }, 100);
+}
+
+// إضافة مستمعي الحدث بعد تحميل الصفحة
+window.addEventListener("DOMContentLoaded", function() {
+    const countrySelect1 = document.getElementById("country1");
+    const countrySelect2 = document.getElementById("country2");
+    if (countrySelect1) {
+        countrySelect1.addEventListener("change", function() {
+            showSingleMap("country1", "map-preview-1");
+        });
+    }
+    if (countrySelect2) {
+        countrySelect2.addEventListener("change", function() {
+            showSingleMap("country2", "map-preview-2");
+        });
+    }
+});
 
 
 
