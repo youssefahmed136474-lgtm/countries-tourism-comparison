@@ -377,8 +377,16 @@ const visaRequirements = {
             
         },
         "قوسينا":{
-            العاصمة:"المنوفية"\
+            العاصمة:"المنوفية"
+        
             ,
+             الأماكن_السياحية: [
+                { name: "برج إيفل", desc: "برج حديدي شهير في باريس",img:"/images/فرنسا/download (5).jpg" },
+                { name: "متحف اللوفر", desc: "أكبر متحف فني في العالم",img:"/images/فرنسا/download.jpg" },
+                { name: "قصر فرساي", desc: "قصر ملكي فخم",img : "/images/فرنسا/download (1).jpg" },
+                { name: "كاتدرائية نوتردام", desc: "معمار قوطي عظيم",img:"/images/فرنسا/download (2).jpg" },
+                { name: "منطقة الشمبانيا", desc: "منطقة العنب والنبيذ الفاخر",img:"/images/فرنسا/download (3).jpg" },
+            ],
                 
                 
 
